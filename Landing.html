@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Meraki – Speech Therapy at Home | Guided Home Practice for Kids</title>
+    <!-- Font: Nunito for a soft, friendly feel -->
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+    <!-- Icons: Google Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+    <!-- Tailwind CSS CDN with Forms Plugin for better input styling -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style>
+        /* Custom styling for icons */
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for subtle aesthetics */
+        body::-webkit-scrollbar {
+            width: 8px;
+        }
+        body::-webkit-scrollbar-thumb {
+            background-color: #4A908680; /* Primary color, semi-transparent */
+            border-radius: 4px;
+        }
+        body::-webkit-scrollbar-track {
+            background: #FCF9F7; /* Light background */
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        // Soft, warm, and gentle colors as requested
+                        "primary": "#4A9086", // Muted Teal/Green for calm action
+                        "accent": "#F9B5AC", // Gentle Peach/Coral for warmth
+                        "background-light": "#FCF9F7", // Very light off-white
+                        "background-dark": "#1a202c", // Deep charcoal for dark mode
+                        "text-light": "#333333", // Dark Grey for high readability
+                        "text-dark": "#e2e8f0", // Off-white for dark mode
+                    },
+                    fontFamily: {
+                        "sans": ["Nunito", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.75rem", // 12px
+                        "lg": "1rem", // 16px
+                        "xl": "1.5rem", // 24px
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<!-- Use Nunito font and set base colors -->
+<body class="font-sans bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark antialiased">
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+
+            <!-- 1. Top Navigation Bar (Fixed) -->
+            <header class="sticky top-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-sm shadow-sm">
+                <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+                    <div class="flex items-center justify-between whitespace-nowrap py-4">
+                        <div class="flex items-center gap-2">
+                            <!-- Logo Placeholder - Soft Teal Square -->
+                            <div class="h-8 w-8 rounded-lg bg-primary/20 text-primary flex items-center justify-center">
+                                <span class="material-symbols-outlined fill-1">spa</span>
+                            </div>
+                            <h2 class="text-xl font-extrabold leading-tight tracking-[-0.015em]">Meraki</h2>
+                        </div>
+                        <nav class="hidden md:flex items-center gap-8 text-sm font-semibold">
+                            <a class="hover:text-primary transition-colors" href="#home">Home</a>
+                            <a class="hover:text-primary transition-colors" href="#features">Features</a>
+                            <a class="hover:text-primary transition-colors" href="#contact">Contact</a>
+                        </nav>
+                        <!-- Mobile Menu Icon (Hidden on Desktop) -->
+                        <button class="md:hidden p-2 text-primary rounded-lg hover:bg-primary/10 transition-colors">
+                            <span class="material-symbols-outlined">menu</span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <main class="flex flex-1 justify-center">
+                <div class="layout-content-container flex flex-col max-w-6xl flex-1 px-4 sm:px-6 lg:px-8">
+
+                    <!-- 2. Hero Banner Section -->
+                    <section id="home" class="pt-16 pb-20 sm:pt-24 sm:pb-32">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                            <!-- Value Proposition & CTA Column -->
+                            <div class="flex flex-col gap-8 text-center lg:text-left">
+                                <div class="flex flex-col gap-4">
+                                    <h1 class="text-4xl sm:text-6xl font-extrabold leading-tight tracking-tighter">
+                                        Speech Therapy <span class="text-primary">Continues</span> at Home
+                                    </h1>
+                                    <p class="text-xl text-text-light/80 dark:text-text-dark/80 max-w-lg mx-auto lg:mx-0">
+                                        Empower your child with guided, fun, and **personalized** practice between sessions, designed by experts.
+                                    </p>
+                                </div>
+                                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                                    <!-- Primary CTA -->
+                                    <a href="#cta" class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-8 bg-primary text-white text-base font-bold leading-normal tracking-wide shadow-xl shadow-primary/30 hover:bg-primary/90 transition-all transform hover:scale-[1.02]">
+                                        <span>Join the Waitlist</span>
+                                    </a>
+                                    <!-- Secondary CTA -->
+                                    <a href="#video-explainer" class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-8 bg-transparent text-primary text-base font-bold leading-normal tracking-wide ring-2 ring-primary hover:bg-primary/10 transition-colors transform hover:scale-[1.02]">
+                                        <span>Watch Explainer Video</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Image Column -->
+                            <div class="w-full relative aspect-[16/10] sm:aspect-video lg:aspect-square bg-cover rounded-xl shadow-2xl shadow-primary/20" 
+                                data-alt="Warm, inviting illustration of a parent and child smiling while using a tablet together for a therapy session." 
+                                style='background-image: url("https://images.unsplash.com/photo-1627941018696-a9821815e96a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"); background-position: top center;'>
+                                <!-- A subtle overlay for softness -->
+                                <div class="absolute inset-0 rounded-xl bg-accent/10"></div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 3. Pain Points/Value Proposition (Does this sound familiar?) -->
+                    <section class="py-16 sm:py-24">
+                        <div class="text-center mb-12">
+                            <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight tracking-tight">Does this sound familiar?</h2>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <!-- Pain Point 1 -->
+                            <div class="flex flex-col items-center text-center gap-4 rounded-xl border border-primary/20 bg-background-light dark:bg-background-dark p-6 transition-shadow hover:shadow-lg">
+                                <div class="flex items-center justify-center h-14 w-14 rounded-full bg-accent/20 text-accent">
+                                    <span class="material-symbols-outlined text-4xl">hourglass_bottom</span>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-lg font-bold leading-tight">Limited session time</h3>
+                                    <p class="text-sm text-text-light/70 dark:text-text-dark/70">Weekly sessions aren't always enough to build lasting, confident speech habits.</p>
+                                </div>
+                            </div>
+                            <!-- Pain Point 2 -->
+                            <div class="flex flex-col items-center text-center gap-4 rounded-xl border border-primary/20 bg-background-light dark:bg-background-dark p-6 transition-shadow hover:shadow-lg">
+                                <div class="flex items-center justify-center h-14 w-14 rounded-full bg-accent/20 text-accent">
+                                    <span class="material-symbols-outlined text-4xl">memory</span>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-lg font-bold leading-tight">Children forgetting skills</h3>
+                                    <p class="text-sm text-text-light/70 dark:text-text-dark/70">Progress can stall when practice isn't engagingly reinforced between appointments.</p>
+                                </div>
+                            </div>
+                            <!-- Pain Point 3 -->
+                            <div class="flex flex-col items-center text-center gap-4 rounded-xl border border-primary/20 bg-background-light dark:bg-background-dark p-6 transition-shadow hover:shadow-lg">
+                                <div class="flex items-center justify-center h-14 w-14 rounded-full bg-accent/20 text-accent">
+                                    <span class="material-symbols-outlined text-4xl">help_outline</span>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-lg font-bold leading-tight">Unsure how to support</h3>
+                                    <p class="text-sm text-text-light/70 dark:text-text-dark/70">Parents need clear, simple, and effective ways to reinforce therapy at home.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 4. Features (How Meraki Helps) -->
+                    <section id="features" class="py-16 sm:py-24">
+                        <div class="text-center mb-12">
+                            <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight tracking-tight">How Meraki Helps</h2>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <!-- Feature 1: Guided Exercises -->
+                            <div class="flex flex-col gap-0 rounded-xl overflow-hidden shadow-lg border border-primary/10">
+                                <div class="h-48 w-full bg-primary/20 flex items-center justify-center relative">
+                                    <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10"></div>
+                                    <span class="material-symbols-outlined text-7xl text-primary opacity-80 relative z-10">directions_walk</span>
+                                </div>
+                                <div class="p-6 flex flex-col gap-4 flex-grow bg-white dark:bg-gray-800">
+                                    <h3 class="text-xl font-bold">Guided Home Exercises</h3>
+                                    <p class="text-sm text-text-light/70 dark:text-text-dark/70 flex-grow">
+                                        Simple, effective, and fun activities designed by therapists for you to do with your child daily.
+                                    </p>
+                                    <a href="#cta" class="mt-4 flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-5 bg-primary/10 text-primary text-sm font-bold hover:bg-primary/20 transition-colors">
+                                        <span>Get Early Access</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Feature 2: Progress Tracking -->
+                            <div class="flex flex-col gap-0 rounded-xl overflow-hidden shadow-lg border border-primary/10">
+                                <div class="h-48 w-full bg-primary/20 flex items-center justify-center relative">
+                                    <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10"></div>
+                                    <span class="material-symbols-outlined text-7xl text-primary opacity-80 relative z-10">leaderboard</span>
+                                </div>
+                                <div class="p-6 flex flex-col gap-4 flex-grow bg-white dark:bg-gray-800">
+                                    <h3 class="text-xl font-bold">Instant Progress Tracking</h3>
+                                    <p class="text-sm text-text-light/70 dark:text-text-dark/70 flex-grow">
+                                        Visually see your child's progress, understand trends, and celebrate every small milestone.
+                                    </p>
+                                    <a href="#cta" class="mt-4 flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-5 bg-primary/10 text-primary text-sm font-bold hover:bg-primary/20 transition-colors">
+                                        <span>Get Early Access</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Feature 3: Engaging Games -->
+                            <div class="flex flex-col gap-0 rounded-xl overflow-hidden shadow-lg border border-primary/10">
+                                <div class="h-48 w-full bg-primary/20 flex items-center justify-center relative">
+                                    <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10"></div>
+                                    <span class="material-symbols-outlined text-7xl text-primary opacity-80 relative z-10">child_care</span>
+                                </div>
+                                <div class="p-6 flex flex-col gap-4 flex-grow bg-white dark:bg-gray-800">
+                                    <h3 class="text-xl font-bold">Fun, Engaging Speech Games</h3>
+                                    <p class="text-sm text-text-light/70 dark:text-text-dark/70 flex-grow">
+                                        Low-stimulus, high-fun games that make practice feel exactly like playtime.
+                                    </p>
+                                    <a href="#cta" class="mt-4 flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-5 bg-primary/10 text-primary text-sm font-bold hover:bg-primary/20 transition-colors">
+                                        <span>Get Early Access</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 5. Explainer Video Placeholder -->
+                    <section id="video-explainer" class="py-16 sm:py-24">
+                        <div class="text-center mb-6">
+                            <h2 class="text-3xl font-extrabold">See Meraki in action</h2>
+                            <p class="text-lg text-text-light/60 dark:text-text-dark/60">A quick look at how we support your child’s speech journey.</p>
+                        </div>
+                        <div class="relative aspect-video rounded-xl overflow-hidden bg-accent/20 cursor-pointer group shadow-2xl shadow-accent/20">
+                            <!-- Video Placeholder with Soft Image -->
+                            <div class="absolute inset-0 bg-cover bg-center" 
+                                data-alt="Calming still frame from an explainer video." 
+                                style="background-image: url('https://images.unsplash.com/photo-1598282367807-742a78129037?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            </div>
+                            <!-- Overlay and Play Button -->
+                            <div class="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-colors">
+                                <div class="flex h-24 w-24 items-center justify-center rounded-full bg-white/40 backdrop-blur-sm group-hover:bg-white/60 transition-all transform group-hover:scale-105">
+                                    <span class="material-symbols-outlined text-7xl text-white">play_arrow</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 6. Features Snapshot (Detail Blocks) -->
+                    <section class="py-16 sm:py-24">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                            <!-- Icon/Dashboard Placeholder -->
+                            <div class="w-full h-96 rounded-xl bg-primary/10 flex items-center justify-center shadow-inner p-8">
+                                <span class="material-symbols-outlined text-[10rem] text-primary opacity-30">view_cozy</span>
+                            </div>
+                            <!-- Detail Features List -->
+                            <div class="flex flex-col gap-8">
+                                <div class="flex items-start gap-4">
+                                    <span class="material-symbols-outlined text-primary text-3xl mt-1 flex-shrink-0">verified_user</span>
+                                    <div>
+                                        <h4 class="font-bold text-lg">Therapist-Designed Content</h4>
+                                        <p class="text-sm text-text-light/70 dark:text-text-dark/70">
+                                            All activities are created and meticulously vetted by certified speech-language pathologists.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <span class="material-symbols-outlined text-primary text-3xl mt-1 flex-shrink-0">customize</span>
+                                    <div>
+                                        <h4 class="font-bold text-lg">Personalized Routines</h4>
+                                        <p class="text-sm text-text-light/70 dark:text-text-dark/70">
+                                            Get weekly practice plans tailored exactly to your child's specific goals and therapy needs.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <span class="material-symbols-outlined text-primary text-3xl mt-1 flex-shrink-0">data_thresholding</span>
+                                    <div>
+                                        <h4 class="font-bold text-lg">Parent Insights Dashboard</h4>
+                                        <p class="text-sm text-text-light/70 dark:text-text-dark/70">
+                                            Easy-to-read reports to track progress, understand trends, and confidently share updates with your therapist.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <span class="material-symbols-outlined text-primary text-3xl mt-1 flex-shrink-0">lock</span>
+                                    <div>
+                                        <h4 class="font-bold text-lg">Safe &amp; Secure Data</h4>
+                                        <p class="text-sm text-text-light/70 dark:text-text-dark/70">
+                                            Your family's privacy is our top priority. All data is securely encrypted and protected.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 7. Testimonials Placeholder (Updated to Coming Soon) -->
+                    <section class="py-16 sm:py-24 text-center">
+                        <h2 class="text-3xl font-extrabold leading-tight tracking-tight mb-4 text-text-light/50 dark:text-text-dark/50">Testimonials Coming Soon</h2>
+                        <div class="bg-accent/10 rounded-xl max-w-2xl mx-auto p-12 shadow-inner flex flex-col items-center gap-4">
+                            <span class="material-symbols-outlined text-7xl text-accent/80">pending_actions</span>
+                            <p class="text-xl font-bold text-text-light/80 dark:text-text-dark/80">
+                                Real feedback from our first users will be featured here soon!
+                            </p>
+                        </div>
+                    </section>
+
+                    <!-- 8. Final Call-to-Action (CTA) -->
+                    <section id="cta" class="py-16 sm:py-24">
+                        <div class="bg-primary/10 dark:bg-primary/20 rounded-xl p-8 sm:p-16 text-center shadow-2xl shadow-primary/10">
+                            <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight tracking-tight mb-4">
+                                Be the first to join the Meraki family
+                            </h2>
+                            <p class="max-w-xl mx-auto mb-10 text-text-light/80 dark:text-text-dark/80 text-lg">
+                                Join our waitlist now for early access and exclusive updates. Start making a difference today.
+                            </p>
+                            <!-- Waitlist Form -->
+                            <form class="flex flex-col lg:flex-row gap-4 max-w-2xl mx-auto">
+                                <input class="w-full lg:w-1/3 rounded-full border-primary/40 focus:ring-primary focus:border-primary bg-background-light dark:bg-background-dark dark:text-text-dark placeholder:text-text-light/50" placeholder="Your Name" type="text" required/>
+                                <input class="w-full lg:w-1/3 rounded-full border-primary/40 focus:ring-primary focus:border-primary bg-background-light dark:bg-background-dark dark:text-text-dark placeholder:text-text-light/50" placeholder="Your Email Address" type="email" required/>
+                                <button class="flex-shrink-0 w-full lg:w-auto cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-8 bg-primary text-white text-base font-bold leading-normal tracking-wide shadow-xl shadow-primary/40 hover:bg-primary/90 transition-all transform hover:scale-[1.02]" type="submit">
+                                    <span>Get Early Access</span>
+                                </button>
+                            </form>
+                        </div>
+                    </section>
+                </div>
+            </main>
+
+            <!-- 9. Footer -->
+            <footer class="bg-background-light dark:bg-background-dark border-t border-primary/20 mt-12">
+                <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-8">
+                    <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+                        <p class="text-sm text-text-light/60 dark:text-text-dark/60">
+                            © 2024 Meraki Speech Therapy. All Rights Reserved.
+                        </p>
+                        <div class="flex items-center gap-6 text-sm font-semibold">
+                            <a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+                            <a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+                            <a class="hover:text-primary transition-colors" href="#contact">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
