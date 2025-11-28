@@ -118,7 +118,14 @@
                                 data-alt="Warm, inviting illustration of a parent and child smiling while using a tablet together for a therapy session." 
                                 style='background-image: url("https://storage.googleapis.com/partner-content-images/image_25a526.jpg"); background-position: top center;'>
                                 <!-- A subtle overlay for softness -->
-                                <div class="absolute inset-0 rounded-xl bg-accent/10"></div>
+                               <div class="absolute inset-0 rounded-xl overflow-hidden">
+    <img 
+        src="visual.jpg"
+        alt="Parent and child practicing speech therapy at home with Meraki"
+        class="w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-accent/10"></div>
+</div>
                             </div>
                         </div>
                     </section>
@@ -308,13 +315,12 @@
                                 Join our waitlist now for early access and exclusive updates. Start making a difference today.
                             </p>
                             <!-- Waitlist Form -->
-                            <form class="flex flex-col lg:flex-row gap-4 max-w-2xl mx-auto">
-                                <input class="w-full lg:w-1/3 rounded-full border-primary/40 focus:ring-primary focus:border-primary bg-background-light dark:bg-background-dark dark:text-text-dark placeholder:text-text-light/50" placeholder="Your Name" type="text" required/>
-                                <input class="w-full lg:w-1/3 rounded-full border-primary/40 focus:ring-primary focus:border-primary bg-background-light dark:bg-background-dark dark:text-text-dark placeholder:text-text-light/50" placeholder="Your Email Address" type="email" required/>
-                                <button class="flex-shrink-0 w-full lg:w-auto cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-8 bg-primary text-white text-base font-bold leading-normal tracking-wide shadow-xl shadow-primary/40 hover:bg-primary/90 transition-all transform hover:scale-[1.02]" type="submit">
-                                    <span>Get Early Access</span>
-                                </button>
-                            </form>
+                            <button 
+  class="cta-button" 
+  onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSeDL6LYOqDfp2UVpUPVfQjEjyi42bjuMHTBLjtiv0QcfDuoOg/viewform?usp=publish-editor','_blank')"
+>
+  Join the Waitlist
+</button>
                         </div>
                     </section>
                 </div>
